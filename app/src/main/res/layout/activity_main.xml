@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--  리사이클러뷰 생성  -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+<!--  아이템 레이아웃(아이템뷰, 여러 아이템 목록을 보여줄 뷰) 생성  -->
+<!--  여러 개의 정보를 하나의 아이템에 보여줘야 하기에  -->
+<!--  아이템 레이아웃을 레이아웃 파일로 직접 생성하여 사용  -->
+<!--  app - res - layout - 우클릭 - New - Layout Resource File  -->
+<!--  최상위 레이아웃이 LinearLayout인 item_recycler 파일 생성  -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

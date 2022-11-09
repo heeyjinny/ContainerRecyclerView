@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:layout_height="50dp">
+
+<!--  리사이클러뷰로 반복해서 보여줄 목록 1개의 아이템 레이아웃 생성  -->
+<!--  번호, 제목, 날짜 데이터를 표시할 텍스트 뷰 3개 배치  -->
+    <TextView
+        android:id="@+id/textNo"
+        android:text="01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+    <TextView
+        android:id="@+id/textTitle"
+        android:text="Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"/>
+    <TextView
+        android:id="@+id/textDate"
+        android:text="2022-01-01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"/>
+
+<!--  아이템 레이아웃에 맞춰 화면에 보여줄 데이터 클래스 생성  -->
+<!--  java디렉터리 아래 기본패키지명 우클릭 - New - Kotlin File/Class(Data클래스로)  -->
+
+</LinearLayout>
