@@ -2,6 +2,7 @@ package com.heeyjinny.containerrecyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.heeyjinny.containerrecyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +14,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //뷰바인딩
         setContentView(binding.root)
+
+        //FIN
+        //생성한 레이아웃과 소스코드 연결
+        //FIN 1.
+        //사용할 데이터를 생성하는 코드 추가
+        val data: MutableList<Memo> = loadData()
+
+        //FIN 2.
+        //어댑터를 생성하고 어댑터의 listData변수에 데이터목록(변수data) 저장
+        var adapter = CustomAdapter()
+        adapter.listData = data
+
+        //FIN 3.
+        //recyclerView위젯의 adapter속성에 생성한 어댑터 연결
+        binding.recyclerView.adapter = adapter
+
+        //FIN 4.
+        //리사이클러뷰를 화면에 보여주는 형태를 결정하는 레이아웃 매니저 연결
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
 
     }//onCreate
 
@@ -43,5 +64,8 @@ class MainActivity : AppCompatActivity() {
         return data
 
     }//loadData
+
+    //리사이클러뷰어댑터를 상속받는 커스텀어댑터클래스 생성 하고 같은 파일 안에 홀더 클래스 생성
+    //java디렉터리 밑 패키지 우클릭 - New - Kotlin File/Class -  CustomAdapter 클래스 생성
 
 }//MainActivity
