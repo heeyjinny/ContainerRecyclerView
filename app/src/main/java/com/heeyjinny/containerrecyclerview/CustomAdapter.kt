@@ -2,6 +2,7 @@ package com.heeyjinny.containerrecyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.heeyjinny.containerrecyclerview.databinding.ItemRecyclerBinding
 import java.text.SimpleDateFormat
@@ -75,7 +76,7 @@ class CustomAdapter: RecyclerView.Adapter<Holder>() {
 //바인딩은 Holder클래스 안에서 전역변수로 사용되므로 val로 변수 생성해야함
 class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
     //8.
-    //화면에 데이터를 세팅하는 setMemo()메서드 구형
+    //화면에 데이터를 세팅하는 setMemo()메서드 구현
     fun setMemo(memo: Memo){
         //9.
         //위젯과 메모데이터 연결
@@ -85,6 +86,17 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
         var sdf = SimpleDateFormat("yyyy/MM/dd hh:mm:ss")
         var formattedDate = sdf.format(memo.timestamp)
         binding.textDate.text = formattedDate
+    }
+
+    //10. 목록 클릭 이벤트처리
+    //홀더가 가지고 있는 아이템뷰에 클릭 리스너를 달아 목록 클릭 시 실행
+    //홀더 클래스가 생성되는 시점에 클릭리스너 추가 init추가하여 작성
+    init {
+        binding.root.setOnClickListener {
+            //목록 클릭 시 해당 내용 토스트로 보여줌
+            Toast.makeText(binding.root.context, "선택한 아이템 : " + binding.textTitle.text,
+                            Toast.LENGTH_SHORT).show()
+        }
     }
 
 }

@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }//onCreate
 
     //MutableList<Memo>를 반환하는 loadData()메서드 생성
-    //load()메서드 호출 시 100개의 가상 데이터를 받을 수 있음
+    //loadData()메서드 호출 시 100개의 가상 데이터를 받을 수 있음
     fun loadData(): MutableList<Memo>{
 
         //리턴할 MutableList컬렉션 선언하여 변수data에 담기
