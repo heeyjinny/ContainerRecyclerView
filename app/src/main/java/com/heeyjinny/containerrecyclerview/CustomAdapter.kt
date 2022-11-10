@@ -101,4 +101,4 @@ class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.
 
 }
 
-//10. 지금까지 생성한 레이아웃과 소스코드를 MainActivity.kt에서 모두 연결
+//11. 지금까지 생성한 레이아웃과 소스코드를 MainActivity.kt에서 모두 연결
